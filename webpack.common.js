@@ -4,8 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
-    entry: ("./src/index.tsx"),
-    output: {path: path.join(__dirname, "build"), filename: "[name].[contenthash].js"},
+    entry: path.join(__dirname, "src", "index.tsx"),
+    output: {
+        path: path.join(__dirname, "build"),
+        filename: "[name].[contenthash].js"
+    },
     mode: process.env.NODE_ENV || "development",
     resolve: {
         modules: ["node_modules"],
